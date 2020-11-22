@@ -22,7 +22,7 @@ Outlook：メールを一覧からダブルクリックして新しい画面で�
 
 ## 【インストール方法】
 
-1. 「setup.exe」を実行します。
+1. 「OutlookAddIn_OneClickReSend/installer/setup.exe」を実行します。
 2. インストーラの指示に従ってインストールしてください。
 
 ## 【使用方法】
