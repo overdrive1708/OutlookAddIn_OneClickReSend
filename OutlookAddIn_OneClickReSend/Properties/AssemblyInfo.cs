@@ -7,7 +7,7 @@ using System.Security;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("OutlookAddIn_OneClickReSend")]
-[assembly: AssemblyDescription("A VSTO add-in for resending emails in Outlook with just one click.")]
+[assembly: AssemblyDescription("Outlook VSTO add-in for resending emails with just one click.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("overdrive1708")]
 [assembly: AssemblyProduct("OutlookAddIn_OneClickReSend")]
