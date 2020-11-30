@@ -5,9 +5,8 @@
       <!--メール画面のホームタブにリボンを作成-->
       <tab idMso="TabMail">
         
-        <!--返信グループの後ろにワンクリック再送グループを作成-->
+        <!--ワンクリック再送グループを作成-->
         <group id="GroupOneClickReSend"
-               insertAfterMso="GroupMailRespond"
                label="ワンクリック再送"
                autoScale="true">
           
