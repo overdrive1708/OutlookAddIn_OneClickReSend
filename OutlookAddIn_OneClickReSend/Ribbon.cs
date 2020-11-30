@@ -63,6 +63,7 @@ namespace OutlookAddIn_OneClickReSend
                     sendMailItem.BCC = selectMailItem.BCC;
                     sendMailItem.Subject = selectMailItem.Subject;
                     sendMailItem.BodyFormat = selectMailItem.BodyFormat;
+                    sendMailItem.Recipients.ResolveAll();
 
                     if (selectMailItem.BodyFormat == Outlook.OlBodyFormat.olFormatPlain)
                     {
