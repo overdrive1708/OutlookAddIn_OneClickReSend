@@ -42,22 +42,24 @@ namespace OutlookAddIn_OneClickReSend
             this.ribbon = ribbonUI;
         }
 
+        /// <summary>
+        /// 再送ボタン押下時の処理
+        /// </summary>
         public void OnResendButton(Office.IRibbonControl control)
         {
-            //再送ボタン押下時の処理
             var explorer = Globals.ThisAddIn.Application.ActiveExplorer();
             foreach (var item in explorer.Selection)
             {
-                //選択数分処理
+                // 選択数分処理
                 if (item is Outlook.MailItem)
                 {
-                    //再送対象のMailItemを取得
+                    // 再送対象のMailItemを取得
                     var selectMailItem = item as Outlook.MailItem;
 
-                    //送信用のMailItemを作成
+                    // 送信用のMailItemを作成
                     Outlook.MailItem sendMailItem = Globals.ThisAddIn.Application.CreateItem(Outlook.OlItemType.olMailItem);
 
-                    //再送対象MailItemの要素を送信用MailItemの要素にコピー
+                    // 再送対象MailItemの要素を送信用MailItemの要素にコピー
                     sendMailItem.To = selectMailItem.To;
                     sendMailItem.CC = selectMailItem.CC;
                     sendMailItem.BCC = selectMailItem.BCC;
@@ -67,21 +69,21 @@ namespace OutlookAddIn_OneClickReSend
 
                     if (selectMailItem.BodyFormat == Outlook.OlBodyFormat.olFormatPlain)
                     {
-                        //本文がテキスト形式の場合、Body要素をコピーする。
+                        // 本文がテキスト形式の場合、Body要素をコピーする。
                         sendMailItem.Body = selectMailItem.Body;
                     }
                     else if (selectMailItem.BodyFormat == Outlook.OlBodyFormat.olFormatHTML)
                     {
-                        //本文がHTML形式の場合、HTMLBody要素をコピーする。
+                        // 本文がHTML形式の場合、HTMLBody要素をコピーする。
                         sendMailItem.HTMLBody = selectMailItem.HTMLBody;
                     }
                     else
                     {
-                        //本文がリッチテキスト形式や指定なしの場合は非サポート
+                        // 本文がリッチテキスト形式や指定なしの場合は非サポート
                         ;
                     }
 
-                    //コピーが終わったら送信するMailItemを表示
+                    // コピーが終わったら送信するMailItemを表示
                     sendMailItem.Display(false);
                 }
             }
